@@ -2,6 +2,8 @@ FROM tykio/tyk-gateway:latest
 
 COPY tyk.conf /opt/tyk-gateway/tyk.conf
 COPY entrypoint.sh /opt/tyk-gateway/entrypoint.sh
+# Uncomment the line below if a GeoLite2 DB is supplied to use the geographic log distribution analytics feature
+#COPY GeoLite2-City.mmdb /opt/tyk-gateway/GeoLite2-City.mmdb
 
 ENTRYPOINT ["/bin/sh", "-c"]
 CMD ["/opt/tyk-gateway/entrypoint.sh"]

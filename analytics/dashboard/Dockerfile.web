@@ -1,0 +1,8 @@
+FROM tykio/tyk-dashboard:latest
+
+COPY tyk_analytics.conf /opt/tyk-dashboard/tyk_analytics.conf
+COPY entrypoint.sh /opt/tyk-dashboard/entrypoint.sh
+
+ENTRYPOINT ["/bin/sh", "-c"]
+CMD ["/opt/tyk-dashboard/entrypoint.sh"]
+

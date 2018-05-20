@@ -1,0 +1,8 @@
+FROM tykio/tyk-pump-docker-pub:latest
+
+COPY pump.conf /opt/tyk-pump/pump.conf
+COPY entrypoint.sh /opt/tyk-pump/entrypoint.sh
+
+ENTRYPOINT ["/bin/sh", "-c"]
+CMD ["/opt/tyk-pump/entrypoint.sh"]
+
